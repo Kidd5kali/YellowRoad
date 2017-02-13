@@ -246,10 +246,6 @@ input#subscription {
         top: 70px;
     }
 
-    .modal-content {
-        top: 2%;
-    }
-
     .modal-content-content {
         width: 100%;
         padding-left: 0;
@@ -258,15 +254,24 @@ input#subscription {
     }
 
     table, tbody, td, tr { 
-		display: block; 
+		display: inline-table; 
 	}
 
     table td input {
         margin: 5px 10px;
     }
 
+    #lastRow {
+        display: block;
+    }
+
     .close {
         margin-right: 13px;
+    }
+
+    .aroundTable {
+        display: flex;
+        left: 5%;
     }
 
     @keyframes animatetop {
