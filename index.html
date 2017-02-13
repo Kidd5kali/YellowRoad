@@ -135,7 +135,7 @@ input#subscription {
 .modal-content {
     position: relative;
     background-color: white;
-    top: 100px;
+    top: 90px;
     margin: auto;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -213,30 +213,7 @@ input#subscription {
 
 @keyframes animatetop {
     from {top:-300px; opacity:0}
-    to {top:100px; opacity:1}
-}
-
-/*responsive laptop with lower height*/
-@media only screen and (max-height: 600px) {
-    .aroundTable {
-        left: 0;
-    }
-
-    .modal.content {
-        top: 40px;
-    }
-
-    @keyframes animatetop {
-        from {
-            top: -300px;
-            opacity: 0;
-        }
-
-        to {
-            top: 40px;
-            opacity: 1;
-        }
-    }
+    to {top:90px; opacity:1}
 }
 
 
@@ -248,14 +225,56 @@ input#subscription {
         background-color: #3c3c3c;
     }
 
+      #slogen {
+        top: 100px;
+    }
+
+    #regBtnDiv {
+        top: 100px;
+    }
+
     #logo {
         display: block;
         margin-left: 15px;
         margin-right: auto;
     }
+
+    .modal {
+        width: 100%;
+        left: 0;
+        max-height: 660px;
+    }
+
+    .modal-content {
+        top: 2%;
+    }
+
+    .modal-content-content {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 15px;
+    }
+
+    table, tbody, td, tr { 
+		display: block; 
+	}
+
+    table td input {
+        margin: 5px 10px;
+    }
+
+    .close {
+        margin-right: 13px;
+    }
+
+    @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:2%; opacity:1}
+    }
 }
 
-/*responsive with mobile*/
+/*responsive with bigger mobile*/
 @media only screen and (max-width: 600px) {
     body {
         background-image: none;
