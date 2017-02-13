@@ -160,10 +160,11 @@ input#subscription {
     float: right;
     font-size: 38px;
     font-weight: bold;
-    margin-top: -40px;
-    margin-right: 20px;
+    margin-top: 5px;
+    margin-right: 30px;
     height: 45px;
     width: 5%;
+
 }
 
 .close:hover,
@@ -209,6 +210,8 @@ input#subscription {
 .aroundTable {
     background-color: #ffdd00;
     border: none;
+    left: 10%;
+    position: relative;
 }
 
 /* Add Animation */
@@ -296,7 +299,7 @@ input#subscription {
 </style>
 </head>
 <body>
-   <div id="welcomePage">
+    <div id="welcomePage">
         <img id="logo" src="http://i.imgur.com/klPZGez.png" />
         <div id="slogen">
             <p>FEJLESZTŐ AKAROK LENNI</p>
@@ -309,10 +312,10 @@ input#subscription {
     <div id="invisibleMan">
         <div id="invisibleLeft"></div>
         <div id="registrationPage" class="modal">
+            <span class="close">&times;</span>
             <div class="modal-content">
                 <div class="modal-content-content">
-                    <span class="close">&times;</span>
-                    <div style="background-color: #ffdd00; border: none; float: left">
+                    <div class="aroundTable">
                         <table>
                             <tr>
                                 <td class="leftTd">Vezetéknév:</td>
