@@ -179,15 +179,6 @@ input#subscription {
     height: auto;
 }
 
-#invisibleLeft {
-    width: 200px;
-    float: left;
-}
-
-#invisibleRight {
-    width: 200px;
-}
-
 .lastRow {
     border-bottom: 1px solid #ffdd00;
 }
@@ -224,6 +215,22 @@ input#subscription {
     from {top:-300px; opacity:0}
     to {top:100px; opacity:1}
 }
+
+/*responsive laptop with lower height*/
+@media only screen and (max-height: 600px) {
+    .aroundTable {
+        left: 0;
+    }
+
+    .modal.content {
+        top: 40px;
+    }
+
+    @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:40px; opacity:1}
+}
+
 
 /*responsive with ipad*/
 @media only screen and (max-width: 800px) {
