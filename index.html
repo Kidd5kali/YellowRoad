@@ -59,7 +59,7 @@ body {
 }
 
 #interest {
-    border: none;
+    border: 3px solid #3c3c3c;
     color: #ffdd00;
     padding: 15px 32px;
     text-align: center;
@@ -92,8 +92,13 @@ body {
     font-size: 15px;
 }
 
+table {
+    max-width: 500px;
+    left: 20%;
+}
+
 table tr td {
-    border: 1px solid #ffdd00;
+    border-bottom: 1px solid white;
     background-color: #ffdd00;
 }
 
@@ -101,11 +106,6 @@ table tr td {
 .leftTd {
     padding-left: 20px;
     padding-right: 20px;
-}
-
-#worm {
-    border-color: #ffdd00;
-    border: 2px dotted #ffdd00;
 }
 
 #subscription {
@@ -164,11 +164,6 @@ input#subscription {
     left: 20px;
 }
 
-.selectlist {
-   
-}
-
-
 .close {
     color: #aaaaaa;
     float: right;
@@ -176,11 +171,13 @@ input#subscription {
     font-weight: bold;
     margin-top: -40px;
     margin-right: 8px;
+    height: 45px;
+    width: 5%;
 }
 
 .close:hover,
 .close:focus {
-    color: white;
+    color: black;
     text-decoration: none;
     cursor: pointer;
 }
@@ -200,19 +197,30 @@ input#subscription {
 }
 
 .lastRow {
-    background-color: white;
-    border: none;
+    border-bottom: 1px solid #ffdd00;
 }
 
 .lastRow input {
-    border: 5px solid #ffdd00 !important;
+    border: 4px solid #ffdd00 !important;
     color: #ffdd00 !important;
     background-color: #3c3c3c !important;
     width: 180px !important;
     height: auto !important;
     font-size: 19px !important;
     padding: 10px 0 !important;
+    outline: 8px solid #3c3c3c !important;
 }
+
+/*.lastRow input:before {
+    content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 5px solid #ffea00;
+}*/
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
@@ -224,17 +232,81 @@ input#subscription {
     from {top:-300px; opacity:0}
     to {top:100px; opacity:1}
 }
+
+/*responsive with ipad*/
+@media only screen and (max-width: 800px) {
+    body {
+        background-image: none;
+        font-size: 20px;
+        background-color: #3c3c3c;
+    }
+
+    #logo {
+        display: block;
+        margin-left: 15px;
+        margin-right: auto;
+    }
+}
+
+/*responsive with mobile*/
+@media only screen and (max-width: 600px) {
+    body {
+        background-image: none;
+        font-size: 20px;
+        background-color: #3c3c3c;
+    }
+
+    #slogen {
+        top: 100px;
+    }
+
+    #regBtnDiv {
+        top: 100px;
+    }
+
+    #logo {
+        display: block;
+        margin-left: 15px;
+        margin-right: auto;
+    }
+
+    .modal {
+        width: 100%;
+        left: 0;
+        max-height: 660px;
+    }
+
+    .modal-content {
+        top: 2%;
+    }
+
+    .modal-content-content {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 15px;
+    }
+
+    table, tbody, td, tr { 
+		display: block; 
+	}
+
+    @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:2%; opacity:1}
+    }
+}
 </style>
 </head>
 <body>
-    <div id="welcomePage">
-        <img id="logo" src="http://i.imgur.com/6Q8TADy.png" />
+   <div id="welcomePage">
+        <img id="logo" src="http://i.imgur.com/klPZGez.png" />
         <div id="slogen">
             <p>FEJLESZTŐ AKAROK LENNI</p>
             <p>4 HÓNAP ALATT AZZÁ TESZÜNK</p>
         </div>
         <div id="regBtnDiv">
-            <button id="interest" onclick="modal()">ÉRDEKEL</button>
+            <button id="interest" onclick="modalBtn()">ÉRDEKEL</button>
         </div>
     </div>
     <div id="invisibleMan">
@@ -243,64 +315,65 @@ input#subscription {
             <div class="modal-content">
                 <div class="modal-content-content">
                     <span class="close">&times;</span>
-                    <table>
-                        <tr>
-                            <td class="leftTd">Vezetéknév:</td>
-                            <td colspan="3"><input id="lastName" type="text" placeholder="Vezetéknév" required /></td>
-                        </tr>
-                        <tr>
-                            <td class="leftTd">Keresztnév:</td>
-                            <td colspan="3"><input id="firstName" type="text" placeholder="Keresztnév" required /></td>
-                        </tr>
-                        <tr>
-                            <td class="leftTd">Email cím:</td>
-                            <td><input id="eMail" type="text" placeholder="Email cím" required /></td>
-                            <td id="worm">@</td>
-                            <td><input id="comHu" type="text" placeholder=".com" required /></td>
-                        </tr>
-                        <tr>
-                            <td class="leftTd">Telefonszám:</td>
-                            <td colspan="3"><input id="telephone" type="tel" placeholder="Telefonszám" /></td>
-                        </tr>
-                        <tr>
-                            <td class="leftTd">Iskolai végzettség:</td>
-                            <td colspan="3">
-                                <select id="schools" name="studies" required>
-                                    <option>Főiskola/Egyetem</option>
-                                    <option>Érettségi</option>
-                                    <option>egyéb</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="leftTd">Angol nyelvtudás:</td>
-                            <td colspan="3">
-                                <select id="language" name="englishknowledge" required>
-                                    <option>Alapfok</option>
-                                    <option>Középfok</option>
-                                    <option>Felsőfok</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="leftTd">Életkor:</td>
-                            <td colspan="3">
-                                <select id="age" name="old" required>
-                                    <option>18-25 év</option>
-                                    <option>26-35 év</option>
-                                    <option>35 év felett</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="leftTd">Feliratkozás hírlevélre</td>
-                            <td colspan="3"><input type="checkbox" title="hírlevél" id="subscription" checked /></td>
-                        </tr>
-                        <tr>
-                            <td align="center" colspan="4" class="lastRow"><input id="application" type="button" value="Regisztrálok" onclick="HelloYellow()" method="post" /></td>
-                        </tr>
-                    </table>
-
+                    <div style="background-color: #ffdd00; border: none; float: left">
+                        <table>
+                            <tr>
+                                <td class="leftTd">Vezetéknév:</td>
+                                <td colspan="3"><input id="lastName" type="text" placeholder="Vezetéknév" required /></td>
+                            </tr>
+                            <tr>
+                                <td class="leftTd">Keresztnév:</td>
+                                <td colspan="3"><input id="firstName" type="text" placeholder="Keresztnév" required /></td>
+                            </tr>
+                            <tr>
+                                <td class="leftTd">Email cím:</td>
+                                <td><input id="eMail" type="text" placeholder="Email cím" required /></td>
+                                <td id="worm">@</td>
+                                <td><input id="comHu" type="text" placeholder=".com" required /></td>
+                            </tr>
+                            <tr>
+                                <td class="leftTd">Telefonszám:</td>
+                                <td colspan="3"><input id="telephone" type="tel" placeholder="Telefonszám" /></td>
+                            </tr>
+                            <tr>
+                                <td class="leftTd">Iskolai végzettség:</td>
+                                <td colspan="3">
+                                    <select id="schools" name="studies" required>
+                                        <option>Főiskola/Egyetem</option>
+                                        <option>Érettségi</option>
+                                        <option>egyéb</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="leftTd">Angol nyelvtudás:</td>
+                                <td colspan="3">
+                                    <select id="language" name="englishknowledge" required>
+                                        <option>Alapfok</option>
+                                        <option>Középfok</option>
+                                        <option>Felsőfok</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="leftTd">Életkor:</td>
+                                <td colspan="3">
+                                    <select id="age" name="old" required>
+                                        <option>18-25 év</option>
+                                        <option>26-35 év</option>
+                                        <option>35 év felett</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="leftTd">Feliratkozás hírlevélre</td>
+                                <td colspan="3"><input type="checkbox" title="hírlevél" id="subscription" checked /></td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="4" class="lastRow"><input id="application" type="button" value="Regisztrálok" onclick="HelloYellow()" method="post" /></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -314,12 +387,11 @@ var sendData;
 var modal;
 
 // When the user clicks the button, open the modal 
-function modal() {
+function modalBtn() {
     modal = document.getElementById("registrationPage");
     modal.style.display = "block";
+    document.querySelector(".close").addEventListener("click", displayNone);
 }
-
-document.querySelector(".close").addEventListener("click", displayNone);
 
 function displayNone() {
     document.querySelector("#registrationPage").style.display = "none";
@@ -393,7 +465,12 @@ function HelloYellow() {
     };
     console.log(sendData);
     $.post("https://yellowroad.training360.com/registration", sendData, function (res) {
-        console.log(res);
+        console.log(res.success);
+        if (res.success === true) {
+            document.getElementById("application").value = "Sikeres Regisztráció";
+        } else {
+            alert('Nem töltötted ki helyesen a regisztrációt!')
+        }
     });
 }
 </script>
