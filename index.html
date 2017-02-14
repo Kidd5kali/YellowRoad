@@ -134,6 +134,7 @@ input#subscription {
 
 .modal-content {
     position: relative;
+    display: flex;
     background-color: white;
     top: 90px;
     margin: auto;
@@ -282,6 +283,63 @@ input#subscription {
         font-size: 18px;
         background-color: #3c3c3c;
     }
+    #slogen {
+        top: 100px;
+    }
+    #regBtnDiv {
+        top: 100px;
+    }
+    #logo {
+        display: block;
+        margin-left: 15px;
+        margin-right: auto;
+    }
+    .modal {
+        width: 100%;
+        left: 0;
+        max-height: 660px;
+        top: 5px;
+    }
+    .modal-content {
+        top: 2%;
+        padding: 5px 0;
+    }
+    .modal-content-content {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 15px;
+        left: 0;
+    }
+    table, tbody, td, tr { 
+		display: block; 
+	}
+    table {
+        padding: 0 4%;
+    }
+    table td input {
+        margin: 5px 10px;
+    }
+    .aroundTable {
+        display: flex;
+    }
+    .close {
+        margin-right: 13px;
+    }
+    @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:2%; opacity:1}
+    }
+}
+
+
+/*responsive with smaller mobile*/
+@media only screen and (max-width: 500px) {
+    body {
+        background-image: none;
+        font-size: 18px;
+        background-color: #3c3c3c;
+    }
 
     #slogen {
         top: 100px;
@@ -329,6 +387,8 @@ input#subscription {
 
     .aroundTable {
         display: flex;
+        margin: auto;
+        position: static;
     }
 
     .close {
@@ -340,7 +400,6 @@ input#subscription {
     to {top:2%; opacity:1}
     }
 }
-</style>
 </head>
 <body>
     <div id="welcomePage">
