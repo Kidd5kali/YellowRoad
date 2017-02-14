@@ -206,11 +206,6 @@ input#subscription {
 }
 
 /* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-
 @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:90px; opacity:1}
@@ -317,14 +312,23 @@ input#subscription {
         padding-left: 0;
         padding-right: 0;
         font-size: 15px;
+        left: 0;
     }
 
     table, tbody, td, tr { 
 		display: block; 
 	}
 
+    table {
+        padding: 0 4%;
+    }
+
     table td input {
         margin: 5px 10px;
+    }
+
+    .aroundTable {
+        display: flex;
     }
 
     .close {
